@@ -1,0 +1,5 @@
+name: BC_Cm
+main: com.pvpin.Load
+version: git:cmd_alert:1.12-SNAPSHOT:ef326db:1263
+description: Provides the alert and alertraw commands
+author: SpigotMC
