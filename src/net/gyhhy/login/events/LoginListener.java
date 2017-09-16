@@ -1,4 +1,10 @@
 package net.gyhhy.login.events;
+import com.pvpin.Tools;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.script.ScriptException;
 import net.gyhhy.login.LoginTool;
 import net.md_5.bungee.api.connection.Connection;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
@@ -12,17 +18,17 @@ public class LoginListener implements Listener {
         if (sd instanceof ProxiedPlayer){
             ProxiedPlayer sender = (ProxiedPlayer)sd;
             if (!LoginTool.isLogin(sender.getName())){
-                if(event.isCommand()){
-                    String[] cmd = event.getMessage().toLowerCase().split(" ");
-                    if (cmd[0] == "/login" || cmd[0] == "/register"){
-                        return;
-                    }
+                String[] cmd = event.getMessage().toLowerCase().split(" ");
+                if ("/login".equals(cmd[0]) || "/register".equals(cmd[0])){
+                    return;
                 }
+                //sender.sendMessage(event.getMessage().toLowerCase());
                 sender.sendMessage("请先登陆/注册");
                 event.setCancelled(true);
             }
         }
     }
+    @EventHandler
     public void PlayerTabCompleteEvent(TabCompleteEvent event){
         Connection sd = event.getSender();
         if (sd instanceof ProxiedPlayer){
@@ -33,6 +39,7 @@ public class LoginListener implements Listener {
             }
         }
     }
+    @EventHandler
     public void PlayerTabCompleteResponseEvent(TabCompleteResponseEvent event){
         Connection sd = event.getSender();
         if (sd instanceof ProxiedPlayer){
@@ -43,4 +50,18 @@ public class LoginListener implements Listener {
             }
         }
     }
+//    @EventHandler
+//    public void PlayerLoginEvent(LoginEvent event){
+//        Connection sd = event.getConnection();
+//        if (sd instanceof ProxiedPlayer){
+//            ProxiedPlayer sender = (ProxiedPlayer)sd;
+//            Timer timer = new Timer();
+//            timer.schedule(new TimerTask() {
+//                @Override
+//                public void run() {
+//                    
+//                }
+//            }, 20000);
+//        }
+//    }
 }

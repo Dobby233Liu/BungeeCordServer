@@ -10,6 +10,7 @@ import javax.script.ScriptException;
 import net.gyhhy.login.commands.*;
 import net.md_5.bungee.api.plugin.Command;
 import net.gyhhy.login.LoginTool;
+import net.gyhhy.login.ReloadPlayerIsLogin;
 import net.gyhhy.login.events.LoginListener;
 public class LoginLoad {
     private static Load Plugin;
@@ -21,5 +22,6 @@ public class LoginLoad {
             new CommandRegister()
         });
         Tools.registerListener(new LoginListener());
+        ReloadPlayerIsLogin.main();
     }
 }
