@@ -12,6 +12,12 @@ public class LoginListener implements Listener {
         if (sd instanceof ProxiedPlayer){
             ProxiedPlayer sender = (ProxiedPlayer)sd;
             if (!LoginTool.isLogin(sender.getName())){
+                if(event.isCommand()){
+                    String[] cmd = event.getMessage().toLowerCase().split(" ");
+                    if (cmd[0] == "/login" || cmd[0] == "/register"){
+                        return;
+                    }
+                }
                 sender.sendMessage("请先登陆/注册");
                 event.setCancelled(true);
             }
