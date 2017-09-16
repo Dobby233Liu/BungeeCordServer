@@ -1,0 +1,61 @@
+ip_forward: true
+network_compression_threshold: 256
+stats: ed796ee3-c3a0-4e9d-bed7-5bd48e5844d3
+permissions:
+  default:
+  - net.gyhhy.login.login
+  - net.gyhhy.login.register
+  - com.pvpin.help
+  - com.pvpin.servertell
+  - bungeecord.command.list
+  - bungeecord.command.find
+  - com.pvpin.serversay
+  - com.pvpin.servertp
+  - bungeecord.command.server
+  admin:
+  - bungeecord.command.alert
+  - bungeecord.command.send
+  trueadmin:
+  - bungeecord.command.alert
+  - bungeecord.command.end
+  - bungeecord.command.ip
+  - bungeecord.command.reload
+  - bungeecord.command.send
+  - bungeecord.command.find
+  - colormotd.reload
+  - colormotd.smode
+  - colormotd.update
+  - colormotd.smode.enter
+groups:
+  GYHHY:
+  - trueadmin
+servers:
+  lobby:
+    motd: '&1Just another BungeeCord - Forced Host'
+    address: error
+    restricted: false
+timeout: 30000
+listeners:
+- query_port: 25577
+  motd: '&1Another Bungee server'
+  tab_list: GLOBAL_PING
+  query_enabled: false
+  forced_hosts:
+    pvp.md-5.net: pvp
+  ping_passthrough: false
+  bind_local_address: true
+  host: 0.0.0.0:25565
+  max_players: 100
+  tab_size: 60
+  force_default_server: true
+  proxy_protocol: false
+  priorities:
+  - lobby
+  - lobby
+prevent_proxy_connections: false
+player_limit: -1
+online_mode: false
+log_commands: true
+disabled_commands:
+- disabledcommandhere
+connection_throttle: 4000
