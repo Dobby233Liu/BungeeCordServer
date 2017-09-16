@@ -1,15 +1,14 @@
 package com.pvpin;
 import net.md_5.bungee.api.plugin.Plugin;
 import net.md_5.bungee.api.plugin.Command;
-
+import net.gyhhy.LoginLoad;
 public class Load extends Plugin{
     @Override
     public void onEnable(){
-        Tools.setPluginManager(getProxy().getPluginManager());
+        Tools.setPlugin(this);
         Command[] cmds = Commands.getCommands();
-        for (Command cmd : cmds){
-            Tools.getPluginManager().registerCommand(this,cmd);
-        }
+        Tools.registerCommand(cmds);
+        LoginLoad.load(this);
         //getProxy().getPluginManager().registerCommand(this,new Command());
     }
 }
