@@ -1,14 +1,18 @@
+# Library
+```
 net.gyhhy.login.login
 net.gyhhy.login.register
 com.pvpin.help
 com.pvpin.servertell
 com.pvpin.serversay
 com.pvpin.servertp #/PlayerTp
+```
 
-Commands
+
+# Commands
 /login
 /register
 /ServerTell
-/Help #Ö±½Ó¸²¸ÇÔ­°æhelp,ÒªÏë²é¿´Ô­°æhelp.ÇëÊäÈë ?
+/Help #ç›´æ¥è¦†ç›–åŸç‰ˆhelp,è¦æƒ³æŸ¥çœ‹åŸç‰ˆhelp.è¯·è¾“å…¥ ?
 /ServerSay
 /PlayerTp
